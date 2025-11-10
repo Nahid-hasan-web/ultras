@@ -30,7 +30,7 @@ const Header = () => {
     <>
         <header className='py-[15px]'>
             <div className="container">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col lg:flex-row items-center justify-between">
                     {/* ---- social icons */}
                     <div className='socialIcons flex gap-2'>
                         {
