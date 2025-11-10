@@ -7,7 +7,8 @@
 
 @utility container {
   margin-inline: auto;
-  max-width:1770px
+  max-width:1770px;
+  padding:0 15px;
 }
 
 @theme{
