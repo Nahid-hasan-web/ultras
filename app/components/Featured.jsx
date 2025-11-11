@@ -15,8 +15,8 @@ const Featured = () => {
             </div>
             <div className='flex justify-between mt-[61px]'>
                 {
-                    [1,2,3,4].map((item)=>(
-                        <SingelProductCard/>
+                    [1,2,3,4].map((item , i)=>(
+                        <SingelProductCard key={i}/>
                     ))
                 }
             </div>
