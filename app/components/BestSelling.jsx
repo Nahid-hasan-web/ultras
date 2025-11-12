@@ -86,7 +86,7 @@ const BestSelling = () => {
   ];
   return (
     <>
-      <section className="mt-[60px] lg:mt-[270px]">
+      <section className="mt-[60px] lg:mt-[150px] pt-[122px] pb-[121px] bg-[#FAFAFA]">
         <div className="container">
           <div className="flex justify-between">
             <h2 className="text-[42px] font-extrabold font-inter text-[#1a1a1a]">
