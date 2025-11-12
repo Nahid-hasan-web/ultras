@@ -22,3 +22,17 @@
   --color-secend:#C1C1C1;
   --color-textColor:#1A1A1A;
 }
+
+
+@layer{
+  .customTabls .ant-tabs-tab-btn{
+  @apply text-[17px] font-medium font-inter text-[#999999]
+}
+
+}
+.customTabls .ant-tabs-tab-active .ant-tabs-tab-btn{
+  color: black !important;
+}
+.ant-tabs-ink-bar {
+  background: black !important;
+}
