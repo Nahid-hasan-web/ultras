@@ -5,6 +5,7 @@ import Featured from './components/Featured'
 import GridDisplay from './components/GridDisplay'
 import BestSelling from './components/BestSelling'
 import FlashSale from './components/FlashSale'
+import Journal from './components/Journal'
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
     <GridDisplay/>
     <BestSelling/>
     <FlashSale/>
+    <Journal/>
     </>
   )
 }

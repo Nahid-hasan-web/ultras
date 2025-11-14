@@ -36,3 +36,17 @@
 .ant-tabs-ink-bar {
   background: black !important;
 }
+
+/* --------------- brand image scroller  */
+.scroller {
+  animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
