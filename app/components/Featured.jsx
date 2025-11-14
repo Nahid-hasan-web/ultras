@@ -11,7 +11,7 @@ const Featured = () => {
             {/* --------- heading */}
             <div className='flex items-center justify-between'>
                 <h2 className='text-[42px] font-extrabold font-inter text-textColor'>Featured products</h2>
-                <Link className='flex gap-[10px] text-[17px] font-medium font-inter text-[#191919] items-center' href={'#'}>View all products <BsArrowRight/></Link>
+                <Link className='flex  gap-2.5 text-[17px] font-medium font-inter text-[#191919] items-center' href={'#'}>View all products <BsArrowRight/></Link>
             </div>
             <div className='flex justify-between mt-[61px]'>
                 {

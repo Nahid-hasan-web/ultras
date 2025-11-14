@@ -11,78 +11,13 @@ const BestSelling = () => {
       label: "All",
       children: (
          <div className="flex gap-[50px] flex-wrap">
-          {[1, 2, 3, 4].map((item) => (
-            <SingelProductCard />
+          {[1, 2, 3, 4].map((item , i) => (
+            <SingelProductCard key={i} />
           ))}
         </div>
       ),
     },
-    {
-      key: "2",
-      label: "Shoes",
-      children:  (
-        <div className="flex gap-[50px] flex-wrap">
-          {[1, 2, 3].map((item) => (
-            <SingelProductCard />
-          ))}
-        </div>
-      ),
-    },
-    {
-      key: "3",
-      label: "Pants",
-      children: (
-      <div className="flex gap-[50px] flex-wrap">
-          {[1, 2, 3, 4].map((item) => (
-            <SingelProductCard />
-          ))}
-        </div>
-      ),
-    },
-    {
-      key: "4",
-      label: "Hoodie",
-      children: (
-        <div className="flex gap-[50px] flex-wrap">
-          {[1, 2,].map((item) => (
-            <SingelProductCard />
-          ))}
-        </div>
-      ),
-    },
-    {
-      key: "5",
-      label: "outer",
-      children: (
-         <div className="flex gap-[50px] flex-wrap">
-          {[1, 2, 3].map((item) => (
-            <SingelProductCard />
-          ))}
-        </div>
-      ),
-    },
-    {
-      key: "6",
-      label: "jackets",
-      children: (
-         <div className="flex gap-[50px] flex-wrap">
-          {[1, 2,].map((item) => (
-            <SingelProductCard />
-          ))}
-        </div>
-      ),
-    },
-    {
-      key: "7",
-      label: "Accessories",
-      children:  (
-        <div className="flex gap-[50px] flex-wrap">
-          {[1].map((item) => (
-            <SingelProductCard />
-          ))}
-        </div>
-      ),
-    },
+ 
   ];
   return (
     <>
@@ -93,7 +28,7 @@ const BestSelling = () => {
               best selling products
             </h2>
             <Link
-              className="flex gap-[10px] text-[17px] font-medium font-inter text-[#191919] items-center"
+              className="flex gap-2.5 text-[17px] font-medium font-inter text-[#191919] items-center"
               href={"#"}
             >
               View all products <BsArrowRight />

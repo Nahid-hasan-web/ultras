@@ -10,15 +10,15 @@ const GridDisplay = () => {
     <>
       <section id="gridDisplay" className=" mt-[140px] lg:mt-[140px] ">
         <div className="container">
-          <div class="grid grid-cols-5 grid-rows-6 h-[700px] gap-[55px]">
-            <div class="col-span-3 row-span-6 bg-gray-200 flex items-center justify-center text-2xl font-bold rounded-[10px] overflow-hidden">
+          <div className="grid grid-cols-5 grid-rows-6 h-[700px] gap-[55px]">
+            <div className="col-span-3 row-span-6 bg-gray-200 flex items-center justify-center text-2xl font-bold rounded-[10px] overflow-hidden">
               <Image src={gridImage1} alt="grid image"/>
             </div>
-            <div class="col-span-2 row-span-3 col-start-4 bg-gray-300 flex items-center justify-center text-2xl font-bold rounded-[10px] overflow-hidden">
+            <div className="col-span-2 row-span-3 col-start-4 bg-gray-300 flex items-center justify-center text-2xl font-bold rounded-[10px] overflow-hidden">
               <Image src={gridImage2} alt="grid image"/>
               
             </div>
-            <div class="col-span-2 row-span-3 col-start-4 row-start-4 bg-gray-400 flex items-center justify-center text-2xl font-bold rounded-[10px] overflow-hidden">
+            <div className="col-span-2 row-span-3 col-start-4 row-start-4 bg-gray-400 flex items-center justify-center text-2xl font-bold rounded-[10px] overflow-hidden">
               <Image src={gridImage3} alt="grid image"/>
               
             </div>

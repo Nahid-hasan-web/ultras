@@ -1,17 +1,19 @@
 import React from 'react'
-import Banner from './components/Banner'
+// import Banner from './components/Banner'
 import SingelProductCard from './common/SingelProductCard'
 import Featured from './components/Featured'
 import GridDisplay from './components/GridDisplay'
 import BestSelling from './components/BestSelling'
+import FlashSale from './components/FlashSale'
 
 const page = () => {
   return (
     <>
-    <Banner/>
+    {/* <Banner/> */}
     <Featured/>
     <GridDisplay/>
     <BestSelling/>
+    <FlashSale/>
     </>
   )
 }
