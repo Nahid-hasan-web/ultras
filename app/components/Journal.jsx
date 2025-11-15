@@ -51,20 +51,6 @@ const Journal = () => {
           </div>
         </div>
       </section>
-
-       <div className="overflow-hidden w-full py-6 bg-white">
-      <div className="scroller flex w-max">
-        {/* original list */}
-        {brands.map((src, i) => (
-          <img key={i} src={src} className="h-14 w-auto mx-6 object-contain" />
-        ))}
-
-        {/* duplicated list for seamless loop */}
-        {brands.map((src, i) => (
-          <img key={"dup-" + i} src={src} className="h-14 w-auto mx-6 object-contain" />
-        ))}
-      </div>
-    </div>
     </>
   );
 };
