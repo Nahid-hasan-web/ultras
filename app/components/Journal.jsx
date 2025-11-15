@@ -17,7 +17,7 @@ const Journal = () => {
         <div className="container">
           <div className="flex justify-between">
             <h2 className="text-[42px] font-extrabold font-inter text-[#1a1a1a]">
-              best selling products
+             our Journal
             </h2>
             <Link
               className="flex gap-2.5 text-[17px] font-medium font-inter text-[#191919] items-center"
@@ -26,13 +26,16 @@ const Journal = () => {
               View all products <BsArrowRight />
             </Link>
           </div>
-          <div className="flex justify-between mt-[55px]">
+          <div className="flex justify-between mt-[55px] ">
             {/* --------- singel journal card */}
+            {
+              [1,2,3,4,5]
+            }
             <div className="w-[570px]">
               <div className="w-full h-[348px] bg-gray-100 overflow-hidden"></div>
-              <div className="flex justify-between">
+              <div className="flex justify-between mt-[35px]">
                 <div className="">
-                  <h2 className="text-[64px] font-extrabold  font-inter text-primary"></h2>
+                  <h2 className="text-[64px] font-extralight  font-inter text-primary">21</h2>
                   <p className="text-sm font-medium font-raleway text-[#888888]">
                     {" "}
                     August <br /> 2021
