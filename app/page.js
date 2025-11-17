@@ -7,6 +7,7 @@ import BestSelling from './components/BestSelling'
 import FlashSale from './components/FlashSale'
 import Journal from './components/Journal'
 import BrandLogos from './components/BrandLogos'
+import Footer from './components/Footer'
 
 const page = () => {
   return (
@@ -18,6 +19,7 @@ const page = () => {
     <FlashSale/>
     <Journal/>
     <BrandLogos/>
+    <Footer/>
     </>
   )
 }
