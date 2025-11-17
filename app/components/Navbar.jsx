@@ -77,7 +77,7 @@ const Navbar = () => {
               </Link>
               <button className="text-2xl text-[#191919] relative">
                 <AiOutlineShopping />
-                <span className="w-3.5 h-3.5 flex justify-center items-center text-[10px] font-normal font-inter text-[#191919] bg-[#D1E0EA] absolute bottom-[-6px] rounded-full right-0">
+                <span className="w-3.5 h-3.5 flex justify-center items-center text-[10px] font-normal font-inter text-[#191919] bg-[#D1E0EA] absolute -bottom-1.5 rounded-full right-0">
                   1
                 </span>
               </button>

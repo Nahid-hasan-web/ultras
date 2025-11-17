@@ -17,7 +17,7 @@ const SingelProductCard = ({porductImage , productName , productPrice , productS
             <button className='text-[17px] font-medium font-inter text-[#191919] flex items-center gap-2.5  '>add To Cart <BsArrowRight/></button>
             <div className='flex  items-center gap-[29px]'>
                <button className=' relative' ><BsArrowsFullscreen/>
-                <p className=' w-[88px] px-1.5 py-2 bg-[#292929] text-[14px] font-medium text-white  rounded-[3px] absolute left-[-40px] top-[-40px]'>Quick view <IoMdArrowDropdown className=' absolute left-[40px] bottom-[-12px] text-xl text-black'/></p>
+                <p className=' w-[88px] px-1.5 py-2 bg-[#292929] text-[14px] font-medium text-white  rounded-[3px] absolute -left-10 top-[-50px]'>Quick view <IoMdArrowDropdown className=' absolute left-10 -bottom-3 text-xl text-black'/></p>
                </button>
                <button><FaRegHeart/></button>
             </div>

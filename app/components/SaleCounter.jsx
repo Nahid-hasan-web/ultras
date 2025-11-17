@@ -4,10 +4,10 @@ const SaleCounter = () => {
   return (
     <>
       <div className="flex flex-wrap justify-between items-center ">
-        <h2 className="text-[42px] font-extrabold font-inter text-textColor">
+        <h2 className=" text-[30px] lg:text-[42px] font-extrabold font-inter text-textColor">
           Flash Sales
         </h2>
-        <div className="flex items-center gap-4 ">
+        <div className="flex flex-col lg:flex-row  lg:items-center gap-4 ">
           <p className="text-[19px] font-inter  font-medium text-[#191919]">
             Ends In
           </p>

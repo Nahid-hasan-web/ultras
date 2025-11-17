@@ -8,37 +8,43 @@ const GridDisplay = () => {
 
   return (
     <>
-      <section id="gridDisplay" className=" mt-[140px] lg:mt-[140px] ">
+      <section id="gridDisplay" className="mt-10 md:mt-[60px] lg:mt-[140px]">
         <div className="container">
-          <div className="grid grid-cols-5 grid-rows-6 h-[700px] gap-[55px]">
-            <div className="col-span-3 row-span-6 bg-gray-200 flex items-center justify-center text-2xl font-bold rounded-[10px] overflow-hidden">
-              <Image src={gridImage1} alt="grid image"/>
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 lg:grid-rows-6 lg:h-[700px]">
+            <div className="lg:col-span-3 lg:row-span-6 rounded-[10px] overflow-hidden">
+              <div className="w-full h-[300px] lg:h-full">
+                <Image src={gridImage1} alt="grid image" className="object-cover w-full h-full" />
+              </div>
             </div>
-            <div className="col-span-2 row-span-3 col-start-4 bg-gray-300 flex items-center justify-center text-2xl font-bold rounded-[10px] overflow-hidden">
-              <Image src={gridImage2} alt="grid image"/>
-              
+
+            <div className="lg:col-span-2 lg:row-span-3 lg:col-start-4 rounded-[10px] overflow-hidden">
+              <div className="w-full h-[200px] lg:h-full">
+                <Image src={gridImage2} alt="grid image" className="object-cover w-full h-full" />
+              </div>
             </div>
-            <div className="col-span-2 row-span-3 col-start-4 row-start-4 bg-gray-400 flex items-center justify-center text-2xl font-bold rounded-[10px] overflow-hidden">
-              <Image src={gridImage3} alt="grid image"/>
-              
+
+            <div className="lg:col-span-2 lg:row-span-3 lg:col-start-4 lg:row-start-4 rounded-[10px] overflow-hidden">
+              <div className="w-full h-[200px] lg:h-full">
+                <Image src={gridImage3} alt="grid image" className="object-cover w-full h-full" />
+              </div>
             </div>
           </div>
 
-            <div className="flex items-center justify-between mt-[150px]">
-                <div>
-                    <h2 className="text-[42px] font-extrabold font-inter text-textColor">
-                        get 25% off Discount Coupons
-                    </h2>
-                    <p className=" w-full lg:w-[754px] text-lg font-medium font-raleway text-[#555555] leading-[230%] mt-[34px]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst amet, metus, sit massa posuere maecenas. At tellus ut nunc amet vel egestas.
-                    </p>
-                </div>
-                <div className="w-full lg:w-[790px] border border-[#EAEAEA] flex  justify-between bg-[#FAFAFA] h-[77px]">
-                    <input placeholder="Enter your email address here..."  className="pl-[35px] outline-none  placeholder:italic flex-1" type="text" />
-                    <button className="py-[28x] px-[50px] active:scale-[1.1] bg-[#191919] text-[17px] font-medium font-inter text-[#ffffff]">Subscribe now</button>
-
-                </div>
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mt-8 lg:mt-[150px]">
+            <div className="w-full lg:w-1/2">
+              <h2 className="text-[24px] md:text-[32px] lg:text-[42px] font-extrabold font-inter text-textColor">
+                get 25% off Discount Coupons
+              </h2>
+              <p className="text-base md:text-lg font-medium font-raleway text-[#555555] leading-relaxed mt-4 lg:mt-[34px] max-w-xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst amet, metus, sit massa posuere maecenas. At tellus ut nunc amet vel egestas.
+              </p>
             </div>
+
+            <div className="w-full lg:w-[540px] border border-[#EAEAEA] lg:flex bg-[#FAFAFA] h-[77px]">
+              <input placeholder="Enter your email address here..." className="pl-5 outline-none placeholder:italic w-full lg:flex-1 bg-transparent" type="text" />
+              <button className=" w-full lg:w-fit  py-1 px-4 mt-5 lg:mt-0 lg:py-3 lg:px-6 md:px-10 active:scale-[1.02] bg-[#191919] text-[17px] font-medium font-inter text-white">Subscribe now</button>
+            </div>
+          </div>
 
         </div>
       </section>

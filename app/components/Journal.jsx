@@ -13,44 +13,35 @@ const Journal = () => {
   ];
   return (
     <>
-      <section id="Journal" className="mt-[100px]">
+      <section id="Journal" className="mt-10 md:mt-[60px] lg:mt-[100px]">
         <div className="container">
-          <div className="flex justify-between">
-            <h2 className="text-[42px] font-extrabold font-inter text-[#1a1a1a]">
-             our Journal
-            </h2>
-            <Link
-              className="flex gap-2.5 text-[17px] font-medium font-inter text-[#191919] items-center"
-              href={"#"}
-            >
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-extrabold font-inter text-textColor">our Journal</h2>
+            <Link className="flex gap-2.5 text-[16px] md:text-[17px] font-medium font-inter text-textColor items-center" href={"#"}>
               View all products <BsArrowRight />
             </Link>
           </div>
-          <div className="flex justify-between mt-[55px] ">
-            {/* --------- singel journal card */}
-            {
-              [1,2,3,4,5]
-            }
-            <div className="w-[570px]">
-              <div className="w-full h-[348px] bg-gray-100 overflow-hidden"></div>
-              <div className="flex justify-between mt-[35px]">
-                <div className="">
-                  <h2 className="text-[64px] font-extralight  font-inter text-primary">21</h2>
-                  <p className="text-sm font-medium font-raleway text-[#888888]">
-                    {" "}
-                    August <br /> 2021
-                  </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 md:mt-[30px]">
+            {/* --------- single journal card (responsive) */}
+            {[1, 2, 3].map((item, i) => (
+              <article key={i} className="rounded-lg overflow-hidden bg-white">
+                <div className="w-full h-48 md:h-64 lg:h-[348px] bg-gray-100 overflow-hidden">
                 </div>
-                <div className="w-[411px]">
-                  <h2 className="text-[26px] font-black font-inter text-[#191919]">
-                    top 10 casual look ideas to dress up your kids
-                  </h2>
-                  <p className="text-sm font-semibold font-raleway text-[#888888]">
-                    tips & tricks
-                  </p>
+                <div className="p-4 md:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div className="flex items-start gap-4">
+                      <h3 className="text-4xl md:text-5xl lg:text-[64px] font-extralight font-inter text-primary leading-none">21</h3>
+                      <p className="text-sm font-medium font-raleway text-[#888888]">August <br /> 2021</p>
+                    </div>
+                    <div className="sm:flex-1">
+                      <h4 className="text-[20px] md:text-[22px] lg:text-[26px] font-black font-inter text-textColor">top 10 casual look ideas to dress up your kids</h4>
+                      <p className="text-sm font-semibold font-raleway text-[#888888] mt-2">tips & tricks</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

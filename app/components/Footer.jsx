@@ -1,28 +1,19 @@
+'use client'
 import React from 'react'
-import { FiTruck, FiRefreshCw, FiPercent, FiHelpCircle } from 'react-icons/fi'
+import { FaFacebookF } from "react-icons/fa";
+import { IoLogoInstagram } from "react-icons/io5";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa";
+import visa from '../../public/images/visa.png'
+import mastercard from '../../public/images/master.png'
+import aexpress from '../../public/images/aexpress.png'
+import Image from 'next/image';
 
-const ServiceItem = ({ Icon, title, subtitle }) => (
-  <div className="flex items-start gap-4">
-    <div className="text-2xl text-primary mt-1"><Icon /></div>
-    <div>
-      <div className="text-[18px] font-semibold font-inter text-[#191919]">{title}</div>
-      <div className="text-[14px] font-normal font-inter text-[#6B6B6B]">{subtitle}</div>
-    </div>
-  </div>
-)
 
 const Footer = () => {
   return (
     <footer className="pt-8 pb-6 border-t border-[#EDEDED] bg-white">
-      {/* Services row */}
-      <div className="container mb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
-          <ServiceItem Icon={FiTruck} title="Free Shipping" subtitle="Over $200" />
-          <ServiceItem Icon={FiRefreshCw} title="Money Back" subtitle="Return Within 7 Days" />
-          <ServiceItem Icon={FiPercent} title="Buy 4 Get 5th" subtitle="50% Off" />
-          <ServiceItem Icon={FiHelpCircle} title="Any Questions?" subtitle="Experts Are Ready" />
-        </div>
-      </div>
+  
 
       {/* Main footer columns */}
       <div className="container">
@@ -56,11 +47,12 @@ const Footer = () => {
 
           <div>
             <h3 className="text-[26px] font-extrabold font-inter text-textColor mb-6">Forever 2018</h3>
-            <p className="text-[17px] font-medium font-raleway text-[#555555] mb-4">Cras mattis sit amet in metus eu amet adipiscing enim. Ullamcorper in orci, ultricies inceptor eget arcu.</p>
-            <div className="flex gap-3 text-[#6B6B6B]">
-              <span className="w-8 h-8 rounded-full bg-[#F3F3F3] flex items-center justify-center">f</span>
-              <span className="w-8 h-8 rounded-full bg-[#F3F3F3] flex items-center justify-center">in</span>
-              <span className="w-8 h-8 rounded-full bg-[#F3F3F3] flex items-center justify-center">li</span>
+            <p className="text-[17px] font-medium font-raleway max-w-[420px] leading-[230%] text-[#555555] mb-4 ">Cras mattis sit ornare in metus eu amet adipiscing enim. Ullamcorper in orci, ultrices integer eget arcu. Consectetur leo dignissim lacus, lacus sagittis dictumst.</p>
+            <div className="flex gap-5 text-secend">
+                <FaFacebookF/>
+                <IoLogoInstagram/>
+                <FaLinkedinIn/>
+                <FaTwitter/>
             </div>
           </div>
         </div>
@@ -71,9 +63,15 @@ const Footer = () => {
           <div className="flex items-center gap-3">
             <span className="text-[14px] text-[#9C9C9C]">Payment options :</span>
             <div className="flex gap-2">
-              <div className="w-8 h-6 bg-[#F3F3F3] rounded-sm" />
-              <div className="w-8 h-6 bg-[#F3F3F3] rounded-sm" />
-              <div className="w-8 h-6 bg-[#F3F3F3] rounded-sm" />
+              <div className="w-8 h-6 bg-[#F3F3F3] rounded-sm" >
+                <Image src={visa} alt="Visa" />
+              </div>
+              <div className="w-8 h-6 bg-[#F3F3F3] rounded-sm" >
+                <Image src={mastercard} alt="Mastercard" />
+              </div>
+              <div className="w-8 h-6 bg-[#F3F3F3] rounded-sm" >  
+                <Image src={aexpress} alt="American Express" />
+              </div>
             </div>
           </div>
         </div>
