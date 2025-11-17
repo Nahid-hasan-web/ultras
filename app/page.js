@@ -8,11 +8,12 @@ import FlashSale from './components/FlashSale'
 import Journal from './components/Journal'
 import BrandLogos from './components/BrandLogos'
 import Cart from './components/Cart'
+import Banner from './components/Banner'
 
 const page = () => {
   return (
     <>
-    {/* <Banner/> */}
+    <Banner  />
     <Featured/>
     <GridDisplay/>
     <BestSelling/>
