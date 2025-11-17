@@ -8,6 +8,7 @@ import FlashSale from './components/FlashSale'
 import Journal from './components/Journal'
 import BrandLogos from './components/BrandLogos'
 import Footer from './components/Footer'
+import Cart from './components/Cart'
 
 const page = () => {
   return (
@@ -20,6 +21,7 @@ const page = () => {
     <Journal/>
     <BrandLogos/>
     <Footer/>
+    <Cart/>
     </>
   )
 }
