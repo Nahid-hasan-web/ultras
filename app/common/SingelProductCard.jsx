@@ -8,7 +8,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 const SingelProductCard = ({porductImage , productName , productPrice , productStock}) => {
   return (
     <>
-      <div className='w-full lg:w-[400px] rounded-1.5 '>
+      <div className='w-full lg:w-[400px] rounded-1.5  bg-white'>
         {/* --------- card image */}
        <div className='p-2.5 h-[512px] overflow-hidden relative  group border border-[#EAEAEA]'>
         {/* <Image src={porductImage}/>b */}
