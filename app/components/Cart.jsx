@@ -2,17 +2,12 @@
 import React from 'react'
 import Image from 'next/image'
 import { IoMdClose } from 'react-icons/io'
+import Link from 'next/link'
+import { useRouter } from "next/navigation";
 
-/**
- * Cart overlay component
- * Props:
- * - open: boolean (controls visibility)
- * - onClose: () => void
- * - items: array of { id, image (public path), title, price, qty }
- *
- * This component is purely presentational and uses the project's fonts/colors.
- */
-const Cart = ({ open = false, onClose = () => {}, items = null }) => {
+
+const Cart = ({ open, onClose , items = null }) => {
+  const router   = useRouter()
   const sampleItems = [
     { id: 1, image: '/images/logo.png', title: 'Sample Product A', price: 49.0, qty: 1 },
     { id: 2, image: '/images/logo.png', title: 'Sample Product B', price: 29.0, qty: 2 },
@@ -22,15 +17,14 @@ const Cart = ({ open = false, onClose = () => {}, items = null }) => {
 
   const total = list.reduce((s, it) => s + (it.price || 0) * (it.qty || 1), 0)
 
-  if (!open) return null
-
+  console.log(open);
+  
   return (
-    <div className="fixed inset-0 z-50">
+    <div className={`fixed inset-0 z-50  ${open? "right-0":"right-[120%]"}`}>
       {/* backdrop */}
-      <div onClick={onClose} className="absolute inset-0 bg-black/60" />
-
+      <div className={`absolute ${open? "right-0" :"right-[-120%]"} duration-[.4s] inset-0 bg-black/40`} />
       {/* right panel */}
-      <aside className="absolute top-0 right-0 h-full w-full md:w-[500px] bg-white shadow-lg z-60 overflow-auto">
+      <aside className={` absolute top-0 ${open? "right-0":"right-[-120%]"} duration-[.4s] right-0 h-full w-full md:w-[500px] bg-white shadow-lg z-60 overflow-auto`}>
         <div className="p-6 h-full flex flex-col">
           <div className="flex items-center justify-between">
             <h3 className="text-[26px] font-extrabold font-inter text-textColor">Cart</h3>
@@ -67,7 +61,10 @@ const Cart = ({ open = false, onClose = () => {}, items = null }) => {
               <span className="text-[17px] font-medium font-raleway text-[#555555]">Total</span>
               <span className="text-[20px] font-extrabold font-inter text-textColor">${total.toFixed(2)}</span>
             </div>
-            <button className="w-full py-3 bg-[#191919] text-white text-[17px] font-medium font-inter rounded-md">Checkout</button>
+            <button onClick={()=>{
+              onclose()
+              router.push('/checkout')
+            }} className="w-full inline-block text-center py-3 bg-[#191919] text-white text-[17px] font-medium font-inter rounded-md">Checkout</button>
           </div>
         </div>
       </aside>

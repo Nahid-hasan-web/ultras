@@ -8,9 +8,11 @@ import { FaRegUser } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { AiOutlineShopping } from "react-icons/ai";
 import { FaBars } from "react-icons/fa6";
+import Cart from "./Cart";
 
 const Navbar = () => {
     const [showNav , setShowNav] = useState(false)
+    const  [showcart , setShowcart] = useState(false)
   const NavItems = [
     {
       navContent: "Women",
@@ -45,7 +47,7 @@ const Navbar = () => {
       navLink: "/",
     },
   ];
-
+console.log(showcart)
   return (
     <>
       <nav className="pt-[19px] pb-[30px] border-t border-[#EDEDED] hidden lg:block">
@@ -75,7 +77,7 @@ const Navbar = () => {
               <Link href={"#"} className="text-xl text-[#191919]">
                 <FaRegHeart />
               </Link>
-              <button className="text-2xl text-[#191919] relative">
+              <button onClick={()=>setShowcart(!showcart)} className="text-2xl text-[#191919] active:scale-[1.1] relative">
                 <AiOutlineShopping />
                 <span className="w-3.5 h-3.5 flex justify-center items-center text-[10px] font-normal font-inter text-[#191919] bg-[#D1E0EA] absolute -bottom-1.5 rounded-full right-0">
                   1
@@ -104,7 +106,7 @@ const Navbar = () => {
               <Link href={"#"} className="text-xl text-[#191919]">
                 <FaRegHeart />
               </Link>
-              <button className="text-2xl text-[#191919] relative">
+              <button onClick={()=>setShowcart(!showcart)} className="text-2xl text-[#191919] relative">
                 <AiOutlineShopping />
                 <span className="w-3.5 h-3.5 flex justify-center items-center text-[10px] font-normal font-inter text-[#191919] bg-[#D1E0EA] absolute -bottom-1.5 rounded-full right-0">
                   1
@@ -129,6 +131,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+    <Cart onClose={()=>setShowcart(!showcart)} open={showcart}/>
     </>
   );
 };
