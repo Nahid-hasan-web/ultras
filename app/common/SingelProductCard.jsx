@@ -23,14 +23,21 @@ const SingelProductCard = ({porductImage , productName , productPrice , productS
             </div>
           </div>
         </div> 
-          <h2 className='text-[28px] font-semibold font-inter text-[#191919] mt-[34px] mb-6.5'>{productName}</h2>
-          <div>
-            <div className='flex items-center justify-between'>
-
-          <h2 className='text-[34px] font-light font-inter text-primary'>${productPrice}</h2>
-          <p className='text-[14px] font-medium font-inter text-black'>InStock{productStock}</p>
+        <div className='p-6'>
+          <h2 className='text-[16px] font-semibold font-inter text-[#191919] line-clamp-2 mb-3 hover:text-primary transition-colors duration-300'>{productName}</h2>
+          <div className='flex items-center justify-between gap-3'>
+            <div>
+              <p className='text-[12px] font-medium font-inter text-[#888888] mb-1'>Price</p>
+              <h3 className='text-[24px] font-bold font-inter text-primary'>${productPrice}</h3>
+            </div>
+            <div className='text-right'>
+              <p className='text-[12px] font-medium font-inter text-[#888888] mb-1'>Stock</p>
+              <p className={`text-[14px] font-semibold font-inter ${productStock > 0 ? 'text-green-600' : 'text-red-600'}`}>
+                {productStock > 0 ? `${productStock} Available` : 'Out of Stock'}
+              </p>
             </div>
           </div>
+        </div>
       </div>
     </>
   )
