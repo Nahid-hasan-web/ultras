@@ -9,7 +9,7 @@ const ProductsPagination = ({products}) => {
         <div className="flex gap-5 flex-wrap justify-end mb-5">
           {
           products.map((item) => (
-            <SingelProductCard porductImage={item.thumbnail} productName={item.title} productPrice={item.discontPrice} productStock={item.stock} />
+            <SingelProductCard key={item._id} porductImage={item.thumbnail} productName={item.title} productPrice={item.discontPrice} productStock={item.stock} />
           ))}
         </div>
         <Pagination align="end" defaultCurrent={1} total={50} />

@@ -47,7 +47,6 @@ const Navbar = () => {
       navLink: "/",
     },
   ];
-  console.log(showcart);
   return (
     <>
       <nav className="pt-[19px] pb-[30px] border-t border-[#EDEDED] hidden lg:block">

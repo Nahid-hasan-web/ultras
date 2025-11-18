@@ -7,6 +7,7 @@ const page = async () => {
 
   const apiData =  await fetch('http://localhost:8000/product/getProduct_public' , {cache:"no-store"})
   const data = await apiData.json()
+  
 
 
   return (

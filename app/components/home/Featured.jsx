@@ -20,7 +20,7 @@ const Featured = async () => {
             </h2>
             <Link
               className="flex  gap-2.5 text-[16px] md:text-[17px] font-medium font-inter text-textColor items-center"
-              href={"/allproducts"}
+              href={"/allproducts?limit=9&skip=0&categorys=all&sort=deafult"}
             >
               View all products <BsArrowRight />
             </Link>
