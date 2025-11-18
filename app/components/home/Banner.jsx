@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import bannerImage from '../../public/images/banner_image.png'
+import bannerImage from '../../../public/images/banner_image.png'
 import Image from 'next/image'
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";

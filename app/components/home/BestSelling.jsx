@@ -1,8 +1,8 @@
+import SingelProductCard from "@/app/common/SingelProductCard";
 import { Tabs } from "antd";
 import Link from "next/link";
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
-import SingelProductCard from "../common/SingelProductCard";
 
 const BestSelling = () => {
   const items = [

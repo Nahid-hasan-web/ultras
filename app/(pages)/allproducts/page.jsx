@@ -1,14 +1,13 @@
-import FilterBy from "@/app/components/FilterBy";
-import FilterHead from "@/app/components/FilterHead";
-import ProductsPagination from "@/app/components/ProductsPagination";
+import FilterBy from "@/app/components/allproudcts/FilterBy";
+import FilterHead from "@/app/components/allproudcts/FilterHead";
+import ProductsPagination from "@/app/components/allproudcts/ProductsPagination";
 import React from "react";
 
 const page = async () => {
 
-  const apiData =  await fetch('http://localhost:8000/product/getProduct_public')
+  const apiData =  await fetch('http://localhost:8000/product/getProduct_public' , {cache:"no-store"})
   const data = await apiData.json()
 
-  console.log(data.productList)
 
   return (
     <>

@@ -1,7 +1,7 @@
 import React from "react";
-import gridImage1 from '../../public/images/gridImage1.png'
-import gridImage2 from '../../public/images/gridImage2.png'
-import gridImage3 from '../../public/images/gridImage3.png'
+import gridImage1 from '../../../public/images/gridImage1.png'
+import gridImage2 from '../../../public/images/gridImage2.png'
+import gridImage3 from '../../../public/images/gridImage3.png'
 import Image from "next/image";
 
 const GridDisplay = () => {

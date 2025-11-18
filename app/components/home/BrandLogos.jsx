@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
-import brand1 from  '../../public/images/brand1.png'
-import brand2 from  '../../public/images/brand2.png'
-import brand3 from  '../../public/images/brand3.png'
-import brand4 from  '../../public/images/brand4.png'
-import brand5 from  '../../public/images/brand5.png'
+import brand1 from  '../../../public/images/brand1.png'
+import brand2 from  '../../../public/images/brand2.png'
+import brand3 from  '../../../public/images/brand3.png'
+import brand4 from  '../../../public/images/brand4.png'
+import brand5 from  '../../../public/images/brand5.png'
 const BrandLogos = () => {
   return (
     <>

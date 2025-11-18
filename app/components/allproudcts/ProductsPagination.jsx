@@ -1,6 +1,6 @@
 import React from "react";
-import SingelProductCard from "../common/SingelProductCard";
 import { Pagination } from "antd";
+import SingelProductCard from "@/app/common/SingelProductCard";
 
 const ProductsPagination = ({products}) => {
   return (
