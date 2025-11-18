@@ -17,7 +17,6 @@ const Cart = ({ open, onClose , items = null }) => {
 
   const total = list.reduce((s, it) => s + (it.price || 0) * (it.qty || 1), 0)
 
-  console.log(open);
   
   return (
     <div className={`fixed inset-0 z-50  ${open? "right-0":"right-[120%]"}`}>

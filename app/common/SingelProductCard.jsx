@@ -11,7 +11,7 @@ const SingelProductCard = ({porductImage , productName , productPrice , productS
       <div className='w-full lg:w-[400px] rounded-1.5  bg-white'>
         {/* --------- card image */}
        <div className='p-2.5 h-[512px] overflow-hidden relative  group border border-[#EAEAEA]'>
-        {/* <Image src={porductImage}/>b */}
+        <Image fill src={porductImage} alt={productName}/>
           {/* add to cart button */}
           <div className='w-full lg:w-[348px] h-[65px] bg-white absolute px-[27px] duration-[.4s] bottom-[-100px] group-hover:bottom-9 left-[50%] translate-x-[-50%] justify-between flex items-center'>
             <button className='text-[17px] font-medium font-inter text-[#191919] flex items-center gap-2.5  '>add To Cart <BsArrowRight/></button>
@@ -28,7 +28,7 @@ const SingelProductCard = ({porductImage , productName , productPrice , productS
             <div className='flex items-center justify-between'>
 
           <h2 className='text-[34px] font-light font-inter text-primary'>${productPrice}</h2>
-          <p className='text-[14px] font-medium font-inter text-black'>{productStock}</p>
+          <p className='text-[14px] font-medium font-inter text-black'>InStock{productStock}</p>
             </div>
           </div>
       </div>
