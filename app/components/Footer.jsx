@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className="pt-8 pb-6 border-t border-[#EDEDED] bg-white">
+    <footer className="pt-8 pb-6 border-t border-[#EDEDED] bg-white ">
   
 
       {/* Main footer columns */}
