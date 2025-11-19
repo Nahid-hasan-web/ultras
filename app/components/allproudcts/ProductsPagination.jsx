@@ -3,8 +3,15 @@ import { Pagination } from "antd";
 import SingelProductCard from "@/app/common/SingelProductCard";
 
 const ProductsPagination = ({products}) => {
+  
+  
+  
+
   return (
     <>
+    {
+      Array.isArray(products)&&
+
       <div className="flex-1">
         <div className="flex gap-5 flex-wrap justify-end mb-5">
           {
@@ -13,7 +20,8 @@ const ProductsPagination = ({products}) => {
           ))}
         </div>
         <Pagination align="end" defaultCurrent={1} total={50} />
-      </div>
+      </div> 
+    }
     </>
   );
 };

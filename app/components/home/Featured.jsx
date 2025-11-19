@@ -4,6 +4,10 @@ import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 
 const Featured = async () => {
+
+
+
+
   const apiData = await fetch(
     "http://localhost:8000/product/getProduct_public?productLimit=4" , {cache:"no-store"}
   );
@@ -20,7 +24,7 @@ const Featured = async () => {
             </h2>
             <Link
               className="flex  gap-2.5 text-[16px] md:text-[17px] font-medium font-inter text-textColor items-center"
-              href={"/allproducts?limit=9&skip=0&categorys=all&sort=deafult"}
+              href={"/allproducts"}
             >
               View all products <BsArrowRight />
             </Link>
