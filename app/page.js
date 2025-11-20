@@ -13,7 +13,7 @@ const page = () => {
       <Banner />
       <Featured />
       <GridDisplay />
-      <BestSelling />
+      {/* <BestSelling /> */}
       <FlashSale />
       <Journal />
       <BrandLogos />

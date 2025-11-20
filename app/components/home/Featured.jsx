@@ -1,3 +1,4 @@
+
 import SingelProductCard from "@/app/common/SingelProductCard";
 import Link from "next/link";
 import React from "react";
@@ -39,6 +40,7 @@ const Featured = async () => {
                 productStock={item.stock}
                 porductImage={item.thumbnail}
                 key={item._id}
+                productId={item._id}
               />
             ))}
           </div>
