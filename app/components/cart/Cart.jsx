@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { IoMdClose } from 'react-icons/io'
 import Link from 'next/link'
@@ -7,17 +7,19 @@ import { useRouter } from "next/navigation";
 
 
 const Cart = ({ open, onClose , items = null }) => {
-  const router   = useRouter()
-  const sampleItems = [
-    { id: 1, image: '/images/logo.png', title: 'Sample Product A', price: 49.0, qty: 1 },
-    { id: 2, image: '/images/logo.png', title: 'Sample Product B', price: 29.0, qty: 2 },
-  ]
+  const [cartData , setCartData] = useState([])
 
-  const list = items && items.length ? items : sampleItems
 
-  const total = list.reduce((s, it) => s + (it.price || 0) * (it.qty || 1), 0)
+  useEffect(()=>{
+    console.log('hello')
+    fetch(`http://localhost:8000/cart/getCart/68c836cf11cd2114930d7c52`)
+    .then((res)=>res.json())
+    .then((data)=>setCartData(data))
+    .catch((err)=>console.log(err))
+  },[])
 
-  
+  console.log(cartData)
+
   return (
     <div className={`fixed inset-0 z-50  ${open? "right-0":"right-[120%]"}`}>
       {/* backdrop */}
@@ -34,18 +36,18 @@ const Cart = ({ open, onClose , items = null }) => {
 
           <div className="mt-6 flex-1">
             <ul className="space-y-4">
-              {list.map((it) => (
-                <li key={it.id} className="flex items-center gap-4">
+              {cartData?.cartItem?.map((item) => (
+                <li  className="flex items-center gap-4">
                   <div className="w-20 h-20 bg-gray-200 rounded-md overflow-hidden shrink-0">
-                   
+                   <img src={item.productId.thumbnail} alt="cart image" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-[17px] font-medium font-raleway text-[#555555] hover:text-textColor">{it.title}</h4>
+                    <h4 className="text-[17px] font-medium font-raleway text-[#555555] hover:text-textColor">{item.productId.title}</h4>
                     <div className="flex items-center justify-between mt-2">
-                      <div className="text-[17px] font-medium font-inter text-textColor">${(it.price || 0).toFixed(2)}</div>
+                      <div className="text-[17px] font-medium font-inter text-textColor">${item.productId.price}</div>
                       <div className="flex items-center gap-2">
                         <button className="w-8 h-8 flex items-center justify-center border border-[#EAEAEA] text-[16px]">-</button>
-                        <div className="px-3 text-[16px] font-medium">{it.qty}</div>
+                        <div className="px-3 text-[16px] font-medium">{item.qty}</div>
                         <button className="w-8 h-8 flex items-center justify-center border border-[#EAEAEA] text-[16px]">+</button>
                       </div>
                     </div>
@@ -53,12 +55,12 @@ const Cart = ({ open, onClose , items = null }) => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> 
 
           <div className="mt-6 border-t border-[#EAEAEA] pt-4">
             <div className="flex items-center justify-between mb-4">
               <span className="text-[17px] font-medium font-raleway text-[#555555]">Total</span>
-              <span className="text-[20px] font-extrabold font-inter text-textColor">${total.toFixed(2)}</span>
+              <span className="text-[20px] font-extrabold font-inter text-textColor">${cartData.total}</span>
             </div>
             <button onClick={()=>{
               onclose()
