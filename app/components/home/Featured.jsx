@@ -35,12 +35,8 @@ const Featured = async () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6 md:mt-[30px] lg:mt-[61px]">
             {data.productList.map((item) => (
               <SingelProductCard
-                productName={item.title}
-                productPrice={item.discontPrice}
-                productStock={item.stock}
-                porductImage={item.thumbnail}
-                key={item._id}
-                productId={item._id}
+              key={item._id}
+              item={item}
               />
             ))}
           </div>
