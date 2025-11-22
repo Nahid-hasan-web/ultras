@@ -6,8 +6,9 @@ import DetailsButton from './buttons/DetailsButton';
 import HeartButton from './buttons/HeartButton';
 
 const SingelProductCard = ({item}) => {
+  
 
-
+  
 
   return (
     <>
@@ -19,7 +20,7 @@ const SingelProductCard = ({item}) => {
           <div className='w-full lg:w-[348px] h-[65px] bg-white absolute px-[27px] duration-[.4s] bottom-[-100px] group-hover:bottom-9 left-[50%] translate-x-[-50%] justify-between flex items-center'>
             <AddToCartButton productId={item._id}/>
             <div className='flex  items-center gap-[29px]'>
-             <DetailsButton/>
+             <DetailsButton slug={item.slug}/>
                <HeartButton/>
             </div>
           </div>
