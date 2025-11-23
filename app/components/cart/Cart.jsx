@@ -6,9 +6,10 @@ import Link from 'next/link'
 import { useRouter } from "next/navigation";
 
 
+
 const Cart = ({ open, onClose , items = null }) => {
   const [cartData , setCartData] = useState([])
-
+  const router = useRouter()
 
   useEffect(()=>{
     console.log('hello')
@@ -18,7 +19,6 @@ const Cart = ({ open, onClose , items = null }) => {
     .catch((err)=>console.log(err))
   },[])
 
-  console.log(cartData)
 
   return (
     <div className={`fixed inset-0 z-50  ${open? "right-0":"right-[120%]"}`}>
@@ -44,7 +44,7 @@ const Cart = ({ open, onClose , items = null }) => {
                   <div className="flex-1">
                     <h4 className="text-[17px] font-medium font-raleway text-[#555555] hover:text-textColor">{item.productId.title}</h4>
                     <div className="flex items-center justify-between mt-2">
-                      <div className="text-[17px] font-medium font-inter text-textColor">${item.productId.price}</div>
+                      <div className="text-[17px] font-medium font-inter text-textColor">${item.productId.discontPrice}</div>
                       <div className="flex items-center gap-2">
                         <button className="w-8 h-8 flex items-center justify-center border border-[#EAEAEA] text-[16px]">-</button>
                         <div className="px-3 text-[16px] font-medium">{item.qty}</div>
@@ -63,7 +63,7 @@ const Cart = ({ open, onClose , items = null }) => {
               <span className="text-[20px] font-extrabold font-inter text-textColor">${cartData.total}</span>
             </div>
             <button onClick={()=>{
-              onclose()
+              onclose
               router.push('/checkout')
             }} className="w-full inline-block text-center py-3 bg-[#191919] text-white text-[17px] font-medium font-inter rounded-md">Checkout</button>
           </div>

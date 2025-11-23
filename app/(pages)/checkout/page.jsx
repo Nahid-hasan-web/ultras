@@ -83,7 +83,7 @@ const Checkout = () => {
 
   const [couponCode, setCouponCode] = useState('')
   const [couponDiscount, setCouponDiscount] = useState(0)
-  const [currentStep, setCurrentStep] = useState(0)
+  const [currentStep, setCurrentStep] = useState(1)
 
   // Sample cart items (replace with real data from context/props)
   const cartItems = [
@@ -133,16 +133,14 @@ const Checkout = () => {
             current={currentStep}
             items={[
               {
-                title: 'Shipping',
-                description: 'Address',
+                title: 'Add to cart',
               },
               {
                 title: 'Review',
                 description: 'Order',
               },
               {
-                title: 'Payment',
-                description: 'Confirm',
+                title: 'Confirm Order',
               },
             ]}
             style={{
@@ -171,7 +169,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       name="name"
-                      value={formData.name}
+                      
                       onChange={handleFormChange}
                       placeholder="John Doe"
                       className="w-full px-4 py-4 border-2 border-[#D6D9DF] rounded-lg outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 text-base font-raleway transition-all placeholder:text-[#9EA3AB]"
@@ -182,7 +180,7 @@ const Checkout = () => {
                     <input
                       type="tel"
                       name="phone"
-                      value={formData.phone}
+                      
                       onChange={handleFormChange}
                       placeholder="+880 1234567890"
                       className="w-full px-4 py-4 border-2 border-[#D6D9DF] rounded-lg outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 text-base font-raleway transition-all placeholder:text-[#9EA3AB]"
@@ -196,7 +194,7 @@ const Checkout = () => {
                   <input
                     type="email"
                     name="email"
-                    value={formData.email}
+                    
                     onChange={handleFormChange}
                     placeholder="your@email.com"
                     className="w-full px-4 py-4 border-2 border-[#D6D9DF] rounded-lg outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 text-base font-raleway transition-all placeholder:text-[#9EA3AB]"
@@ -208,7 +206,7 @@ const Checkout = () => {
                   <label className="block text-base font-medium font-inter text-textColor mb-3">District</label>
                   <select
                     name="district"
-                    value={formData.district}
+                    
                     onChange={handleFormChange}
                     className="w-full px-4 py-4 border-2 border-[#D6D9DF] rounded-lg outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 text-base font-raleway bg-white transition-all appearance-none bg-no-repeat bg-right"
                     style={{
@@ -231,7 +229,7 @@ const Checkout = () => {
                   <label className="block text-base font-medium font-inter text-textColor mb-3">Delivery Instructions (Optional)</label>
                   <textarea
                     name="comments"
-                    value={formData.comments}
+                    
                     onChange={handleFormChange}
                     placeholder="Add any special delivery instructions..."
                     rows="4"
@@ -254,16 +252,16 @@ const Checkout = () => {
                     <span className="text-sm font-semibold font-inter text-textColor">({cartItems.length})</span>
                   </div>
                   <div className="space-y-5">
-                    {cartItems.map((item) => (
-                      <div key={item.id} className="flex items-start gap-4">
+                    {[1,2,3].map((item , i) => (
+                      <div key={i} className="flex items-start gap-4">
                         <div className="w-16 h-16 bg-[#F5F7FB] rounded-lg shrink-0 flex items-center justify-center">
                           <span className="text-xs font-semibold text-textColor">IMG</span>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h5 className="text-sm font-medium font-raleway text-textColor line-clamp-2 mb-1.5">{item.title}</h5>
+                          <h5 className="text-sm font-medium font-raleway text-textColor line-clamp-2 mb-1.5">title</h5>
                           <div className="flex items-center justify-between">
-                            <span className="text-xs font-raleway text-[#9EA3AB]">{item.qty}x ${item.price.toFixed(2)}</span>
-                            <span className="text-sm font-semibold font-inter text-textColor">${(item.price * item.qty).toFixed(2)}</span>
+                            <span className="text-xs font-raleway text-[#9EA3AB]">1</span>
+                            <span className="text-sm font-semibold font-inter text-textColor">price</span>
                           </div>
                         </div>
                       </div>
@@ -292,7 +290,7 @@ const Checkout = () => {
                   </div>
                   {couponDiscount > 0 && (
                     <div className="mt-3 p-3 bg-[#F0F9FF] rounded-lg flex items-center justify-between border border-primary/20">
-                      <span className="text-sm font-semibold text-primary">✓ Discount applied</span>
+                      <span className="text-sm font-semibold text-primary">Discount applied</span>
                       <button
                         type="button"
                         onClick={handleClearCoupon}
@@ -308,18 +306,18 @@ const Checkout = () => {
                 <div className="space-y-4 mb-8">
                   <div className="flex justify-between items-center">
                     <span className="text-base font-medium font-raleway text-[#9EA3AB]">Subtotal</span>
-                    <span className="text-base font-semibold font-inter text-textColor">${subtotal.toFixed(2)}</span>
+                    <span className="text-base font-semibold font-inter text-textColor">sbutotal price</span>
                   </div>
                   {couponDiscount > 0 && (
                     <div className="flex justify-between items-center">
                       <span className="text-base font-medium font-raleway text-[#10B981]">Discount</span>
-                      <span className="text-base font-semibold font-inter text-[#10B981]">-${couponDiscount.toFixed(2)}</span>
+                      <span className="text-base font-semibold font-inter text-[#10B981]">Discount price</span>
                     </div>
                   )}
                   <div className="flex justify-between items-center">
                     <span className="text-base font-medium font-raleway text-[#9EA3AB]">Delivery</span>
                     <span className={`text-base font-semibold font-inter ${deliveryCharge === 0 ? 'text-[#10B981]' : 'text-textColor'}`}>
-                      {deliveryCharge === 0 ? 'Free' : `$${deliveryCharge.toFixed(2)}`}
+                     delivery charge
                     </span>
                   </div>
                 </div>
@@ -328,7 +326,7 @@ const Checkout = () => {
                 <div className="mb-8 pb-8 border-t-2 border-[#EAEAEA] pt-6">
                   <div className="flex justify-between items-center">
                     <span className="text-lg font-semibold font-inter text-[#9EA3AB]">Total</span>
-                    <span className="text-3xl font-bold font-inter text-textColor">${total.toFixed(2)}</span>
+                    <span className="text-3xl font-bold font-inter text-textColor">total price</span>
                   </div>
                 </div>
 
