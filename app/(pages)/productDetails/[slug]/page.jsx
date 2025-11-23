@@ -2,16 +2,23 @@ import ProductSubImages from '@/app/components/productDetail/ProductSubImages'
 import SizeSelector from '@/app/components/productDetail/SizeSelector'
 import React from 'react'
 
-const page = () => {
+const page = async ({params}) => {
+  const {slug} =  await params
+  const apiData = await fetch(`http://localhost:8000/product/productDetails/${slug}`)
+  const data = await apiData.json()
+
+  
+
+
   return (
     <>
       <section id='productDetails' className='py-[60px]'>
         <div className="container">
           <div className='flex gap-10'>
-          <ProductSubImages/>
+          <ProductSubImages productImages={data} />
         <div className=''>
-          <h2 className='text-3xl font-normal text-textColor'>Product title name</h2>
-          <h3 className='text-2xl font-bold tracking-wide  text-textColor my-5'>150Tk</h3>
+          <h2 className='text-3xl font-normal text-textColor'>{data.title}</h2>
+          <h3 className='text-2xl font-bold tracking-wide  text-textColor my-5'>$ {data.discontPrice}</h3>
           <SizeSelector/>
           <p className='text-base font-medium text-gray-500 mt-3'>SKU : <span className='text-textColor'>48624</span></p>
           <p className='text-base font-medium text-gray-500 mt-3'>Category  : <span className='text-textColor'>48624</span></p>

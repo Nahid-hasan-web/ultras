@@ -17,7 +17,7 @@ const ProductsPagination = ({products}) => {
           {
           products.map((item) => (
            
-                 <SingelProductCard
+            <SingelProductCard
               key={item._id}
               item={item}
               />
