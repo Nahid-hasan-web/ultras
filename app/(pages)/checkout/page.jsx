@@ -98,6 +98,7 @@ const Checkout = () => {
   const handleFormChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+    
   }
 
   const handleApplyCoupon = () => {
@@ -168,7 +169,7 @@ const Checkout = () => {
                     <label className="block text-base font-medium font-inter text-textColor mb-3">Full Name</label>
                     <input
                       type="text"
-                      name="name"
+                      name="userName"
                       
                       onChange={handleFormChange}
                       placeholder="John Doe"

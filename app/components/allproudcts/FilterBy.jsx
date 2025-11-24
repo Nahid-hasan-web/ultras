@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Slider, Switch } from "antd";
 const FilterBy = () => {
-  const [priceRange, setPriceRange] = useState([50, 200]);
+  const [priceRange, setPriceRange] = useState([50, 3000]);
 
   return (
     <>

@@ -12,7 +12,7 @@ const Cart = ({ open, onClose , items = null }) => {
   const router = useRouter()
 
   useEffect(()=>{
-    console.log('hello')
+    
     fetch(`http://localhost:8000/cart/getCart/68c836cf11cd2114930d7c52`)
     .then((res)=>res.json())
     .then((data)=>setCartData(data))
@@ -37,7 +37,7 @@ const Cart = ({ open, onClose , items = null }) => {
           <div className="mt-6 flex-1">
             <ul className="space-y-4">
               {cartData?.cartItem?.map((item) => (
-                <li  className="flex items-center gap-4">
+                <li key={item._id} className="flex items-center gap-4">
                   <div className="w-20 h-20 bg-gray-200 rounded-md overflow-hidden shrink-0">
                    <img src={item.productId.thumbnail} alt="cart image" />
                   </div>
