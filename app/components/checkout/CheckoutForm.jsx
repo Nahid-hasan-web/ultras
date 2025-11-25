@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({formInfo}) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -92,6 +92,7 @@ const CheckoutForm = () => {
                   Full Name
                 </label>
                 <input
+                  onChange={(e)=>formInfo((prev)=>({...prev , customerName:e.target.value}))}
                   type="text"
                   name="userName"
                   placeholder="John Doe"
@@ -105,6 +106,7 @@ const CheckoutForm = () => {
                 <input
                   type="tel"
                   name="phone"
+                  onChange={(e)=>formInfo((prev)=>({...prev , phone:e.target.value}))}
               
                   placeholder="+880 1234567890"
                   className="w-full px-4 py-4 border-2 border-[#D6D9DF] rounded-lg outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 text-base font-raleway transition-all placeholder:text-[#9EA3AB]"
@@ -120,6 +122,7 @@ const CheckoutForm = () => {
               <input
                 type="email"
                 name="email"
+                  onChange={(e)=>formInfo((prev)=>({...prev , email:e.target.value}))}
              
                 placeholder="your@email.com"
                 className="w-full px-4 py-4 border-2 border-[#D6D9DF] rounded-lg outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 text-base font-raleway transition-all placeholder:text-[#9EA3AB]"
@@ -133,6 +136,7 @@ const CheckoutForm = () => {
               </label>
               <select
                 name="district"
+                  onChange={(e)=>formInfo((prev)=>({...prev , distick:e.target.value}))}
         
                 className="w-full px-4 py-4 border-2 border-[#D6D9DF] rounded-lg outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 text-base font-raleway bg-white transition-all appearance-none bg-no-repeat bg-right"
                 style={{
@@ -149,7 +153,20 @@ const CheckoutForm = () => {
                 ))}
               </select>
             </div>
-
+            {/* address */}
+           <div className="mb-6">
+              <label className="block text-base font-medium font-inter text-textColor mb-3">
+                 Address
+              </label>
+              <input
+                type="address"
+                name="address"
+                  onChange={(e)=>formInfo((prev)=>({...prev , address:e.target.value}))}
+             
+                placeholder="your@email.com"
+                className="w-full px-4 py-4 border-2 border-[#D6D9DF] rounded-lg outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 text-base font-raleway transition-all placeholder:text-[#9EA3AB]"
+              />
+            </div>
             {/* Comments */}
             <div>
               <label className="block text-base font-medium font-inter text-textColor mb-3">
@@ -157,6 +174,7 @@ const CheckoutForm = () => {
               </label>
               <textarea
                 name="comments"
+                onChange={(e)=>formInfo((prev)=>({...prev , comment:e.target.value}))}
       
                 placeholder="Add any special delivery instructions..."
                 rows="4"

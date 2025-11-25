@@ -10,9 +10,9 @@ import CheckoutBox from '@/app/components/checkout/CheckoutBox'
 const Checkout = () => {
 
   const [currentStep, setCurrentStep] = useState(1)
+  const [formData , setFormData] = useState({customerName:'' ,phone:'',distick:'',address:'' , email:'' ,comment:''})
+
   
-
-
   return (
     <div className="min-h-screen bg-white py-8 md:py-12 lg:py-16">
       <div className="container">
@@ -45,8 +45,8 @@ const Checkout = () => {
 
         {/* Main Grid */}
         <div className="flex lg:justify-between  lg:gap-20">
-            <CheckoutForm />
-            <CheckoutBox/>
+            <CheckoutForm formInfo={setFormData} />
+            <CheckoutBox formData={formData}/>
         </div>
       </div>
     </div>

@@ -1,18 +1,40 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 
-const CheckoutBox = () => {
+const CheckoutBox = ({ formData }) => {
   const [couponApproved, setCuponDeveloped] = useState(false);
-  const [cartProdcut ,setCartProdcut]  = useState([])
-  useEffect(()=>{
-    // ---------- cart api 
-    fetch(`http://localhost:8000/cart/getCart/68c836cf11cd2114930d7c52`)
-    .then((res)=>res.json())
-    .then((data)=>setCartProdcut(data))
-    .catch((err)=>console.log(err))
-  },[])
+  const [cartProdcut, setCartProdcut] = useState([]);
 
-  console.log(cartProdcut.cartItem)
+  useEffect(() => {
+    // ---------- cart api
+    fetch(`http://localhost:8000/cart/getCart/68c836cf11cd2114930d7c52`)
+      .then((res) => res.json())
+      .then((data) => setCartProdcut(data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  const handelOrder = () => {
+    fetch("http://localhost:8000/order/place-order", {
+      method: "POST", 
+      headers: {
+      "Content-Type": "application/json",
+      "Accept":'application/json'
+    },
+      body: JSON.stringify({
+        cartId: cartProdcut.cartId,
+        customerName: formData.customerName,
+        phone: formData.phone,
+        distick: formData.distick,
+        address: formData.address,
+        email: formData.email,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  };
+
+  console.log(cartProdcut.cartId, formData);
 
   return (
     <>
@@ -27,33 +49,30 @@ const CheckoutBox = () => {
                 </h4>
                 <span className="text-sm font-semibold font-inter text-textColor"></span>
               </div>
-              {
-                cartProdcut.cartItem.map((item)=>(
-              <div className=" mb-5">
-                <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 bg-[#F5F7FB] rounded-lg shrink-0 flex items-center justify-center">
-                    <span className="text-xs font-semibold text-textColor">
-                      IMG
-                    </span>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h5 className="text-sm font-medium font-raleway text-textColor line-clamp-2 mb-1.5">
-                      title
-                    </h5>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-raleway text-[#9EA3AB]">
-                        1
+              {cartProdcut?.cartItem?.map((item) => (
+                <div className=" mb-5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 bg-[#F5F7FB] rounded-lg shrink-0 flex items-center justify-center overflow-hidden">
+                      <span className="text-xs font-semibold text-textColor ">
+                        <img src={item.productId.thumbnail} alt="" />
                       </span>
-                      <span className="text-sm font-semibold font-inter text-textColor">
-                        price
-                      </span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h5 className="text-sm font-medium font-raleway text-textColor line-clamp-2 mb-1.5">
+                        {item.productId.title}
+                      </h5>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-raleway text-[#9EA3AB]">
+                          {item.qty}
+                        </span>
+                        <span className="text-sm font-semibold font-inter text-textColor">
+                          $ {item.productId.discontPrice}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-                ))
-              }
+              ))}
             </div>
 
             {/* Coupon Section */}
@@ -96,7 +115,7 @@ const CheckoutBox = () => {
                   Subtotal
                 </span>
                 <span className="text-base font-semibold font-inter text-textColor">
-                  sbutotal price
+                  {cartProdcut.total}
                 </span>
               </div>
               {couponApproved && (
@@ -123,14 +142,17 @@ const CheckoutBox = () => {
                   Total
                 </span>
                 <span className="text-3xl font-bold font-inter text-textColor">
-                  total price
+                  {cartProdcut.total}
                 </span>
               </div>
             </div>
 
             {/* CTA Button - 56px height */}
-            <button className="w-full h-14 bg-textColor text-white text-lg font-semibold font-inter rounded-lg hover:bg-primary transition-all shadow-sm hover:shadow-md">
-              Continue to Checkout
+            <button
+              onClick={handelOrder}
+              className="w-full h-14 bg-textColor text-white text-lg font-semibold font-inter rounded-lg hover:bg-primary transition-all shadow-sm hover:shadow-md"
+            >
+              Confirm order
             </button>
 
             {/* Trust Badge */}
